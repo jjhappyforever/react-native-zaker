@@ -11,4 +11,4 @@
 
  import Home from './Home';
 
-AppRegistry.registerComponent('zaker', () => zaker);
+AppRegistry.registerComponent('zaker', () => Home);
