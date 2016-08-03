@@ -16,6 +16,7 @@ import {
   Navigator,
   BackAndroid,
   ToastAndroid,
+  ScrollView,
 } from 'react-native';
 
 import Util from './view/Util';
@@ -23,67 +24,17 @@ import TitleBar from './view/TitleBar';
 import GridView from './view/GridView';
 import Mine from  './view/Mine';
 
+import HomeBanner from './view/HomeBanner';
+
 const toolbarAction=[
   {title:'频道订阅',icon: require('image!ic_search'),show:'always'},
   {title:'我的',icon: require('image!ic_personal_normal'),show:'always'}
 ];
 
-
-export default class FirstCompent extends Component{
-
-  render(){
-    let defaultName='Home';
-    let defaultComponent=Home;
-    return(
-      <Navigator
-       initialRoute={{name:defaultName,component:defaultComponent}}
-       configureScene={()=>Navigator.SceneConfigs.FloatFromRight}
-       renderScene={(route, navigator) => {
-         let Component = route.component;
-         return <Component {...route.params} navigator={navigator} />
-      }} />
-    );
-  }
-
-}
-
-class Home extends Component {
+export default  class Home extends Component {
 
   constructor(){
     super();
-  }
-
-
-  componentWillMount(){
-   if(Platform.OS==='android'){
-     BackAndroid.addEventListener('hardwareBackPress',this.onBackAndroid.bind(this));
-   }
-  }
-
-  componentWillUnmount(){
-    if(Platform.OS==='android'){
-      BackAndroid.removeEventListener('hardwareBackPress',this.onBackAndroid.bind(this));
-    }
-  }
-
-  /**
-  返回true:执行back，返回false，执行eixt
-  **/
-  onBackAndroid(){
-    const nav = this.props.navigator;
-    const routers = nav.getCurrentRoutes();
-    if(routers.length>1){
-     nav.pop();
-     return true;
-    }
-    if(this.lastBackPressed&&(this.lastBackPressed+2000>=Date.now())){
-      //两秒内back处理
-      return false;
-    }else{
-      this.lastBackPressed = Date.now();
-      ToastAndroid.show('在按一次退出程序',ToastAndroid.SHORT);
-      return true;
-    }
   }
 
   //渲染每一个Banner
@@ -124,6 +75,7 @@ class Home extends Component {
       }
 
      return (
+
        <View style={styles.container}>
        <StatusBar
         backgroundColor='#fb4747'
@@ -131,10 +83,15 @@ class Home extends Component {
         animated={true}
         hidden={false}
        />
-       <TitleBar onPressSearch={this.onPressSearch.bind(this)} onPressMine={this.onPressMine}/>
+        {titleBar}
+       <ScrollView>
+       <View>
+       <HomeBanner/>
        <GridView
         navigator={this.props.navigator}
        />
+       </View>
+       </ScrollView>
        </View>
     );
   }

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/base_circle_bg"
+    android:layout_margin="20dip"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/dialog_delete_title"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:gravity="center"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:singleLine="true"
+        android:textColor="#3d4245"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="#e2e2e2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dialog_down_cancle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/base_list_item_selector"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/default_text_color"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="0.5dip"
+            android:layout_height="match_parent"
+            android:background="#e2e2e2" />
+
+        <TextView
+            android:id="@+id/dialog_down_cofirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/base_list_item_selector"
+            android:gravity="center"
+            android:text="移除"
+            android:textColor="#fb4747"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

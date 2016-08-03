@@ -9,6 +9,6 @@
    AppRegistry,
  } from 'react-native';
 
- import Home from './Home';
+ import Root from './root';
 
-AppRegistry.registerComponent('zaker', () => Home);
+AppRegistry.registerComponent('zaker', () => Root);

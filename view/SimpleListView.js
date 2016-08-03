@@ -40,7 +40,16 @@ class Item extends Component{
     var title=data.title;
     var image=data.images?data.images[0]:null;
     return(
-      <TouchableHighlight underlayColor='#ddd' onPress={this.props.onPress}>
+      <TouchableHighlight
+       style={{
+         borderRadius:3,
+         marginLeft:8,
+         marginRight:8,
+         marginTop:4,
+         marginBottom:4,
+
+       }}
+      underlayColor='#ddd' onPress={this.props.onPress}>
       <View style={styles.itemLayout}>
       <Text numberOfLines={3} style={{flex:1,height:70,color:'#000',fontSize:18}}>{title}</Text>
       {image?<Image style={styles.imageItem}source={{uri:image}}/>:null}
@@ -262,14 +271,9 @@ const styles=StyleSheet.create({
     backgroundColor:'#fff',
     borderColor:'#f3f3f3',
     alignItems:'center',
-    borderRadius:3,
-    marginLeft:8,
-    marginRight:8,
-    marginTop:4,
-    marginBottom:4,
+    borderWidth:Util.Pixel,
     paddingLeft:15,
     paddingRight:15,
-    borderWidth:Util.Pixel,
   },
   imageItem: {
     backgroundColor: '#dddddd',

@@ -45,11 +45,9 @@ export default class HomeBanner extends Component{
    renderPage(data,pageID){
      if(data){
        return(
-        <TouchableOpacity  onpress={()=>console.log('...')}>
         <Image
         source={{uri: data.image}}
         style={styles.banner} />
-        </TouchableOpacity>
        );
      }else{
        return null;
@@ -58,13 +56,15 @@ export default class HomeBanner extends Component{
 
   render(){
     return(
+    <View style={{height:180}}>
      <ViewPager
-      style={{flex:1,height:170}}
+      style={{height:180}}
       dataSource={this.state.dataSource}
       renderPage={this.renderPage}
       isLoop={true}
       autoPlay={true}
      />
+     </View>
     );
   }
 }
@@ -72,8 +72,7 @@ export default class HomeBanner extends Component{
 
 const styles=StyleSheet.create({
   banner:{
-    flex:1,
-    height:170,
+    height:180,
     width:Util.size.width,
     resizeMode:'cover',
   }

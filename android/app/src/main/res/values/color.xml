@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="yellow">#f39c12</color>
+    <color name="grey">#f2f2f2</color>
+    <color name="red">#FF0000</color>
+    <color name="translucent_background">#10000000</color>
+    <color name="translucent">#00000000</color>
+
+    <color name="translucent_background8">#80000000</color>
+    <color name="base_theme_green_color">#44b549</color>
+    <color name="base_theme_press_green_color">#3ea643</color>
+    <color name="base_theme_brown_color">#CDA96E</color>
+    <color name="base_theme_press_brown_color">#b99963</color>
+    
+    <color name="base_theme_color1">#00a29a</color>
+    <color name="base_theme_color">#ff6500</color>
+    <color name="base_theme_press_color">#ea5d00</color>
+    
+    <color name="base_line_color">#dfe3e7</color>
+    <color name="base_item_press">#e9eaec</color>
+    <color name="home_item_press">#3ea643</color>
+    <color name="default_text_color">#3d4245</color>
+    <color name="default_text_color2">#5e676f</color>
+    <color name="actionbar_up_press">#10000000</color>
+    <color name="tab_strip_underline">#c9c9c9</color>
+    <color name="text_price_color">#ff6600</color>
+    <color name="text_goods_color">#757982</color>
+    <color name="nav_item_select">#d0d3d8</color>
+    <color name="setting_driver_color">#dadada</color>
+    <color name="btn_disable_color">#c4c4c4</color>
+    <color name="base_translucent">#30000000</color>
+
+    <!-- scan -->
+    <color name="scan_unfoldable_bg">#333435</color>
+    <color name="sacn_cashier_color">#08c8ff</color>
+    
+    <!-- pay font color -->
+    <color name="tv_pay_cash_color">#f70020</color>
+    <color name="tv_pay_union_color">#ffb44f</color>
+    <color name="tv_pay_wechat_color">#00ce2d</color>
+    <color name="tv_pay_alipay_color">#23a0e7</color>
+    
+    <color name="swipmenu_delete_item_select">#de0000</color>
+
+</resources>

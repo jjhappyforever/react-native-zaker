@@ -15,6 +15,7 @@ import
  ScrollView,
  View,
  Platform,
+ ToastAndroid,
 } from 'react-native';
 
 import Util from './Util';
@@ -27,6 +28,8 @@ var dialog=NativeModules.RemoveChannel;//原生组件.
 
 const API_THEMES_URL = 'http://news-at.zhihu.com/api/4/themes';
 const PAGE_SIZE=3;
+
+var dataCache=null;
 
 class Item extends Component{
 
@@ -128,8 +131,10 @@ export default class GridView extends Component{
         array.push(null);
       }
 
+      dataCache=data.others;
+
       this.setState({
-        dataSource:this.state.dataSource.cloneWithRows(data.others),
+        dataSource:this.state.dataSource.cloneWithRows(dataCache),
         isLoading:false,
       });
     }).catch((error)=>{
@@ -158,9 +163,16 @@ export default class GridView extends Component{
   长按事件
   **/
   onLongPress(data){
-   dialog.show(data.name,(msg)=>{
-     alert('移除成功');
-   });
+    if(Platform.OS=='android'){
+      dialog.show(data.name,(msg)=>{
+       //  //删除指定元素
+       //  dataCache.splice(1,1);
+       //  this.setState({
+       //    dataSource:this.state.dataSource.cloneWithRows(dataCache),
+       //  });
+       ToastAndroid.show('移除成功', ToastAndroid.SHORT)
+      });
+    }
   }
 
   //渲染一行
