@@ -11,6 +11,7 @@ import
 } from 'react-native';
 
 import Util from './Util';
+import SubTitleBar from './SubTitleBar';
 /**
 我的
 **/
@@ -18,7 +19,10 @@ export default class Mine extends Component{
   render(){
     return(
       <View style={{width:200,height:100,backgroundColor:'red'}}>
-      <Text>我的</Text>
+      <SubTitleBar title='我的'/>
+      <View>
+    
+      </View>
       </View>
     );
   }

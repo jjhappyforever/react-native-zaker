@@ -47,7 +47,12 @@ export default  class Home extends Component {
   }
   //actionbar click
   onActionSelected(position){
-   alert(position);
+   if(position==0){
+     this.props.navigator.push({
+       navigator:Mine,
+       name:'Mine',
+     });
+   }
   }
 
   //我的点击

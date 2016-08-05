@@ -14,13 +14,16 @@ import
 
 import Util from './Util';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class SubTitleBar extends Component{
 
   render(){
     return(
       <View style={styles.titleBar}>
+
       <TouchableOpacity onPress={()=>this.props.navigator.pop()}>
-      <Image style={[styles.icon,{marginRight:5}]} source={require('./../images/ic_back.png')}/>
+      <Icon name="angle-left" size={30} color="#fff" />
       </TouchableOpacity>
       <View style={{flex:1,alignItems:'center',}}>
       <Text style={{color:'#fff',fontSize:16}}>{this.props.title}</Text>
