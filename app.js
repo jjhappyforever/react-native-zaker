@@ -48,7 +48,6 @@
      }
    }
 
-
    componentWillMount(){
     if(Platform.OS==='android'){
       BackAndroid.addEventListener('hardwareBackPress',this.onBackAndroid.bind(this));
@@ -80,11 +79,6 @@
        return true;
      }
    }
-
-
-
-
-
 
    /**
    tab点击方法
